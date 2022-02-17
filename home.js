@@ -36,7 +36,7 @@ $(document).ready(function (e) {
             else if (!e.target.checked) {
                 count--;
             }
-            if (count <= 5) {
+            if (count < 5) {
                 resolve(count)
             }
             else {
@@ -46,7 +46,7 @@ $(document).ready(function (e) {
         p.then(function (res) {
             $('#resulttext').html(`${count} out of 5 selected, ${5 - count} pending`);
         }).catch(function (e) {
-            alert("Reached maximum limit");
+            alert("Congrats. 5 Tasks have been Successfully Completed");
         });
 
     });
